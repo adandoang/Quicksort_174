@@ -28,3 +28,10 @@ void input() {
 	}
 } 
 
+void swap(int x, int y)
+{
+	int temp;
+	temp = arr[x];
+	arr[x] = arr[y];
+	arr[y] = temp;
+}
