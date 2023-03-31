@@ -45,8 +45,8 @@ void q_short(int low, int high)
 	j = high;
 	pivot = arr[low];
 
-		while (i <= j)
-	{ 
+	while (i <= j)
+	{
 		while ((arr[i] <= pivot) && (1 <= high))
 		{
 			i++;
@@ -57,6 +57,7 @@ void q_short(int low, int high)
 		while ((arr[j] > pivot) && (j >= low))
 			j--;
 		cmp_count++;
+	}
 		if (i < j)
 
 		{
@@ -78,4 +79,13 @@ void display() {
 	}
 	cout << "\n\nNumber of comparasions: " << cmp_count << endl;
 	cout << "Number of data movement: " << mov_count << endl;
+}
+int main()
+{	
+	input();
+	q_short(0, n - 1);
+	display();
+	system("pause");
+			
+	return 0;
 }
