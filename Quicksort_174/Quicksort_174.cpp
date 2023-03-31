@@ -47,7 +47,7 @@ void q_short(int low, int high)
 
 	while (i <= j)
 	{
-		while ((arr[i] <= pivot) && (1 <= high))
+		while ((arr[i] <= pivot) && (i <= high))
 		{
 			i++;
 			cmp_count++;
@@ -58,10 +58,18 @@ void q_short(int low, int high)
 			j--;
 		cmp_count++;
 	}
+		cmp_count++;
 		if (i < j)
 
 		{
 			swap(i, j);
+			mov_count++;
+		}	
+		cmp_count++;
+		if (low < j)
+
+		{
+			swap(low, j);
 			mov_count++;
 		}
 
@@ -69,9 +77,9 @@ void q_short(int low, int high)
 		q_short(j + 1, high);
 	}
 void display() {
-	cout << "\n==========" << endl;
-	cout << "==Sorted Array==" << endl;
-	cout << "==========" << endl;
+	cout << "\n============" << endl;
+	cout << "Sorted Array" << endl;
+	cout << "============" << endl;
 
 	for (int i = 0; i < n; i++)
 	{
