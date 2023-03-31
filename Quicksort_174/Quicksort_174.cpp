@@ -43,7 +43,7 @@ void q_short(int low, int high)
 
 	i = low + 1;
 	j = high;
-	pivot = arr[low]
+	pivot = arr[low];
 
 		while (i <= j)
 	{ 
@@ -71,4 +71,9 @@ void q_short(int low, int high)
 		cout << "\n==========" << endl;
 		cout << "==Sorted Array==" << endl;
 		cout << "==========" << endl;
+
+		for (int i = 0; i < n; i++)
+		{
+			cout << arr[i] << " ";
+		}
 }
