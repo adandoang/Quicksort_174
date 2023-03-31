@@ -38,44 +38,48 @@ void swap(int x, int y)
 void q_short(int low, int high)
 {
 	int pivot, i, j;
-	if (low > high)
+	if (low > high) 
 		return;
 
 	i = low + 1;
-	j = high;
+	j = high; 
 	pivot = arr[low];
 
 	while (i <= j)
 	{
+		
 		while ((arr[i] <= pivot) && (i <= high))
 		{
 			i++;
 			cmp_count++;
 		}
 		cmp_count++;
-
+		
 		while ((arr[j] > pivot) && (j >= low))
+		{
 			j--;
-		cmp_count++;
-	}
+			cmp_count++;
+		}
 		cmp_count++;
 		if (i < j)
-
 		{
+			
 			swap(i, j);
 			mov_count++;
-		}	
-		cmp_count++;
-		if (low < j)
-
-		{
-			swap(low, j);
-			mov_count++;
 		}
-
-		q_short(low, j - 1);
-		q_short(j + 1, high);
 	}
+	
+	if (low < j)
+		
+	{
+		swap(low, j);
+		mov_count++;
+	}
+	
+	q_short(low, j - 1);
+	q_short(j + 1, high);
+}
+
 void display() {
 	cout << "\n============" << endl;
 	cout << "Sorted Array" << endl;
