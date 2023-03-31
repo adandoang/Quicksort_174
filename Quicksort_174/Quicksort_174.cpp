@@ -17,9 +17,9 @@ void input() {
 			cout << "\n masukan panjang array adalah 20" << endl;
 
 	}
-	cout << "\n===================" << endl;
-	cout << "\nenter array element" << endl;
-	cout << "\n===================" << endl;
+	cout << " \n===================" << endl;
+	cout << "enter array element" << endl;
+	cout << "===================" << endl;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -34,4 +34,37 @@ void swap(int x, int y)
 	temp = arr[x];
 	arr[x] = arr[y];
 	arr[y] = temp;
+}
+void q_short(int low, int high)
+{
+	int pivot, i, j;
+	if (low > high)
+		return;
+
+	i = low + 1;
+	j = high;
+	pivot = arr[low]
+
+	while (i <= j)
+	{ 
+		while ((arr[i] <= pivot) && (1 <= high))
+		{
+			i++;
+			cmp_count++;
+		}
+		cmp_count++;
+
+		while ((arr[j] > pivot) && (j >= low))
+			j--;
+		cmp_count++;
+		if (i < j)
+
+		{
+			swap(i, j);
+			mov_count++;
+		}
+
+		q_short(low, j - 1);
+		q_short(j + 1, high);
+	}
 }
